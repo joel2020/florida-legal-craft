@@ -32,13 +32,13 @@ export function PracticeAreas() {
           {areas.map((a) => (
             <article
               key={a.num}
-              className="group bg-white p-10 lg:p-14 transition-colors hover:bg-[oklch(0.985_0.012_85)] relative"
+              className="group bg-white p-8 lg:p-10 transition-colors hover:bg-[oklch(0.985_0.012_85)] relative"
             >
-              <div className="text-bronze text-[10px] font-bold tracking-[0.5em] mb-16">
+              <div className="text-bronze text-[10px] font-bold tracking-[0.5em] mb-12">
                 {a.num}
               </div>
-              <h3 className="font-serif text-2xl mb-8 leading-snug min-h-[4rem]">{a.title}</h3>
-              <p className="text-sm text-foreground/50 leading-relaxed font-light mb-10">
+              <h3 className="font-serif text-xl lg:text-[1.4rem] mb-6 leading-snug min-h-[3.5rem]">{a.title}</h3>
+              <p className="text-[13px] text-foreground/50 leading-relaxed font-light mb-8">
                 {a.desc}
               </p>
               <div className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full bg-bronze/40 transition-all duration-700" />
