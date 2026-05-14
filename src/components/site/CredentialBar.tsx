@@ -1,32 +1,27 @@
 const credentials = [
-  { primary: "UNIVERSITY of MIAMI", secondary: "School of Law" },
-  { primary: "UNIVERSITY of CONNECTICUT", secondary: "B.A." },
-  { primary: "FLORIDA SUPREME COURT", secondary: "Certified Mediator" },
-  { primary: "ADMITTED TO PRACTICE IN", secondary: "Middle & Southern District Courts of Florida" },
-  { primary: "FLUENT IN", secondary: "English, Mandarin & Spanish" },
+  { eyebrow: "Alumni", label: "University of Miami", italic: "School of Law" },
+  { eyebrow: "Certified", label: "Florida Supreme Court", italic: "Mediator" },
+  { eyebrow: "Admitted", label: "Middle & Southern", italic: "District Courts" },
+  { eyebrow: "Multilingual", label: "English, Mandarin", italic: "& Spanish" },
+  { eyebrow: "Licensed", label: "Florida", italic: "Attorney at Law" },
 ];
 
 export function CredentialBar() {
   return (
-    <section className="bg-ivory border-b border-soft-border">
-      <div className="container-x py-8">
-        <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-6 divide-x divide-soft-border">
-          {credentials.map((c, i) => (
-            <li
-              key={c.primary}
-              className={`px-4 text-center ${i === 0 ? "lg:pl-0" : ""} ${
-                i === credentials.length - 1 ? "lg:pr-0" : ""
-              }`}
-            >
-              <div className="text-[0.65rem] tracking-[0.18em] uppercase font-semibold text-foreground/85 leading-tight">
-                {c.primary}
+    <section className="bg-[oklch(0.96_0.012_85)] border-b border-foreground/5">
+      <div className="container-x py-20">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-10 gap-y-10">
+          {credentials.map((c) => (
+            <div key={c.eyebrow} className="space-y-2">
+              <div className="text-[9px] uppercase tracking-[0.4em] font-bold text-foreground/30">
+                {c.eyebrow}
               </div>
-              <div className="font-serif italic text-sm text-muted-foreground mt-1.5">
-                {c.secondary}
+              <div className="font-serif text-lg text-foreground/80 leading-snug">
+                {c.label} <span className="italic">{c.italic}</span>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

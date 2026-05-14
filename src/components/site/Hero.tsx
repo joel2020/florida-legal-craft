@@ -1,69 +1,54 @@
 import heroImg from "@/assets/mr-huang.png";
-import { Shield, Landmark, Award, Globe, ArrowRight } from "lucide-react";
-
-const badges = [
-  { icon: Shield, label: "Florida\nLicensed Attorney" },
-  { icon: Landmark, label: "Federal Court\nAdmissions" },
-  { icon: Award, label: "Certified\nMediator" },
-  { icon: Globe, label: "English • Mandarin • Spanish" },
-];
 
 export function Hero() {
   return (
-    <section className="relative bg-navy text-ivory overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-[0.06] pointer-events-none"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 30% 50%, rgba(184,135,59,0.5), transparent 60%)",
-        }}
-      />
-      <div className="container-x relative grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center pt-16 lg:pt-20 pb-16 lg:pb-24 min-h-[640px]">
+    <section className="relative bg-navy text-ivory">
+      <div className="container-x grid lg:grid-cols-2 gap-16 lg:gap-24 items-center pt-20 pb-24 lg:pt-28 lg:pb-32 min-h-[calc(100vh-5rem)]">
         <div className="max-w-xl">
-          <p className="eyebrow mb-6">Miami Law. Florida Focus. Global Perspective.</p>
-          <h1 className="font-serif text-[2.6rem] leading-[1.1] sm:text-5xl lg:text-[3.6rem] lg:leading-[1.08] text-ivory">
-            Strategic Legal Counsel.
-            <br />
-            <span className="block mt-2">
-              Trusted Advocacy Across Florida<span className="text-bronze">.</span>
+          <div className="inline-flex items-center gap-4 mb-10">
+            <span className="h-px w-8 bg-bronze" />
+            <span className="text-bronze text-[10px] uppercase tracking-[0.5em] font-semibold">
+              Miami · Florida · Global
             </span>
+          </div>
+          <h1 className="font-serif font-light text-5xl sm:text-6xl lg:text-[5.5rem] leading-[1.05] text-ivory">
+            Strategic Legal{" "}
+            <span className="italic text-bronze font-medium">Counsel.</span>
+            <br />
+            Trusted Advocacy.
           </h1>
-          <p className="mt-6 text-ivory/75 text-base lg:text-[1.05rem] leading-relaxed max-w-lg">
+          <p className="mt-10 text-ivory/45 text-lg lg:text-xl font-light leading-relaxed max-w-md">
             Representing clients with precision, discretion, and multilingual legal insight
             across Florida state and federal courts.
           </p>
-
-          <ul className="mt-9 grid grid-cols-2 sm:grid-cols-4 gap-5 max-w-xl">
-            {badges.map((b) => (
-              <li key={b.label} className="flex items-start gap-2.5">
-                <b.icon className="w-5 h-5 text-bronze shrink-0 mt-0.5" strokeWidth={1.4} />
-                <span className="text-[0.62rem] tracking-[0.16em] uppercase leading-[1.4] text-ivory/85 whitespace-pre-line">
-                  {b.label}
-                </span>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-10 flex flex-wrap gap-3">
-            <a href="#contact" className="btn-primary hover:bg-bronze-soft group">
-              Schedule a Consultation
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          <div className="mt-14 flex flex-wrap gap-10 items-center">
+            <a
+              href="#contact"
+              className="bg-bronze text-navy px-12 py-6 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-ivory transition-colors duration-500"
+            >
+              Schedule Consultation
             </a>
-            <a href="#about" className="btn-outline-light hover:bg-bronze hover:text-white">
+            <a
+              href="#about"
+              className="group flex items-center gap-4 text-ivory/70 text-[10px] uppercase tracking-[0.4em] hover:text-bronze transition-colors"
+            >
               View Credentials
+              <span className="block w-10 h-px bg-ivory/20 group-hover:bg-bronze transition-colors" />
             </a>
           </div>
         </div>
 
         <div className="relative justify-self-center lg:justify-self-end w-full max-w-md lg:max-w-none">
-          <div className="relative aspect-[4/5] lg:aspect-auto lg:h-[600px] w-full">
+          <div className="relative aspect-[4/5] bg-midnight overflow-hidden z-10">
             <img
               src={heroImg}
               alt="Mr. Huang, Florida attorney and Supreme Court Certified Mediator"
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-top grayscale"
               loading="eager"
             />
           </div>
+          <div className="absolute -bottom-8 -left-8 w-48 h-48 border-l border-b border-bronze/30 pointer-events-none" />
+          <div className="absolute top-1/2 -right-12 w-24 h-px bg-bronze/40 pointer-events-none hidden lg:block" />
         </div>
       </div>
     </section>

@@ -1,33 +1,47 @@
 // NOTE: Practice areas are placeholders — confirm with attorney before publishing.
 const areas = [
-  { num: "01", title: "Business & Civil Litigation", desc: "Strategic representation in complex commercial and civil disputes across Florida courts." },
-  { num: "02", title: "Mediation & Dispute Resolution", desc: "Court-certified mediation focused on efficient, confidential resolutions." },
-  { num: "03", title: "Real Estate & Contract Matters", desc: "Counsel on transactions, contract drafting, and real estate disputes." },
-  { num: "04", title: "Immigration & Cross-Border Legal Support", desc: "Multilingual guidance for international clients and cross-border matters." },
-  { num: "05", title: "Personal & Business Legal Counsel", desc: "Trusted ongoing counsel for individuals, families, and closely-held businesses." },
+  { num: "01", title: "Business & Civil Litigation", desc: "Strategic advocacy in complex commercial disputes across Florida state and federal courts." },
+  { num: "02", title: "Mediation & Dispute Resolution", desc: "Certified neutral mediation providing efficient, confidential paths to conflict resolution." },
+  { num: "03", title: "Real Estate & Contract Matters", desc: "Meticulous counsel on high-value transactions, contract drafting, and property disputes." },
+  { num: "04", title: "Immigration & Cross-Border", desc: "Multilingual guidance for international entities and individuals navigating U.S. regulations." },
+  { num: "05", title: "Personal & Business Counsel", desc: "Discreet ongoing advisory services for closely-held businesses and private individuals." },
 ];
 
 export function PracticeAreas() {
   return (
-    <section id="practice-areas" className="bg-ivory py-20 lg:py-28">
+    <section id="practice-areas" className="bg-white py-32 lg:py-40">
       <div className="container-x">
-        <div className="text-center mb-14">
-          <p className="eyebrow">Practice Areas</p>
-          <h2 className="font-serif text-3xl lg:text-[2.5rem] mt-3">
-            Focused Legal Solutions. Practical Results.
-          </h2>
+        <div className="flex flex-col lg:flex-row justify-between items-baseline mb-20 lg:mb-32 gap-10">
+          <div className="max-w-xl">
+            <span className="text-bronze text-[10px] uppercase tracking-[0.6em] block mb-8">
+              Practice Expertise
+            </span>
+            <h2 className="font-serif text-5xl lg:text-7xl font-light leading-[1.05]">
+              Focused Legal Solutions.
+              <br />
+              <span className="italic font-medium">Practical Results.</span>
+            </h2>
+          </div>
+          <p className="text-foreground/40 max-w-xs text-sm font-light leading-relaxed">
+            Tailored legal representation combining deep technical knowledge with a commitment
+            to strategic resolution.
+          </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-px bg-foreground/5 border border-foreground/5">
           {areas.map((a) => (
             <article
               key={a.num}
-              className="group bg-white border border-soft-border p-7 transition-all hover:border-bronze hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(7,17,31,0.18)]"
+              className="group bg-white p-8 lg:p-10 transition-colors hover:bg-[oklch(0.985_0.012_85)] relative"
             >
-              <div className="text-bronze text-sm font-medium tracking-wider mb-4">{a.num}</div>
-              <h3 className="font-serif text-xl leading-snug mb-3 min-h-[3.5rem]">{a.title}</h3>
-              <div className="w-8 h-px bg-bronze mb-4 transition-all group-hover:w-14" />
-              <p className="text-sm text-muted-foreground leading-relaxed">{a.desc}</p>
+              <div className="text-bronze text-[10px] font-bold tracking-[0.5em] mb-12">
+                {a.num}
+              </div>
+              <h3 className="font-serif text-xl lg:text-[1.4rem] mb-6 leading-snug min-h-[3.5rem]">{a.title}</h3>
+              <p className="text-[13px] text-foreground/50 leading-relaxed font-light mb-8">
+                {a.desc}
+              </p>
+              <div className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full bg-bronze/40 transition-all duration-700" />
             </article>
           ))}
         </div>
